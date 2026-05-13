@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="floating-container"></div>
+
+<div class="container">
+    <div class="welcome-section" id="welcomeScreen">
+        <div class="morph-container">
+            <span class="morph-char leftChar">A</span>
+            <i class="fas fa-sync-alt symbol-arrow"></i>
+            <span class="morph-char rightChar">अ</span>
+        </div>
+        <h1 class="welcome-title gradient-text">Welcome to Translio</h1>
+        <p class="welcome-subtitle">Translate words, connect cultures, and communicate effortlessly.</p>
+        <button class="click-prompt-btn" onclick="toggleApp()">ENTER</button>
+    </div>
+
+    <div id="translator-app">
+        <div class="main-card">
+            <i class="fas fa-arrow-left back-btn" onclick="goBack()"></i>
+            
+            <div class="app-header-vertical">
+                <div class="morph-container small">
+                    <span class="morph-char leftChar">A</span>
+                    <i class="fas fa-sync-alt symbol-arrow"></i>
+                    <span class="morph-char rightChar">अ</span>
+                </div>
+                <div class="app-name-display gradient-text">TRANSLIO</div>
+            </div>
+
+            <div class="lang-section">
+                <select id="langFrom">
+                    <option value="en-US">English</option>
+                    <option value="hi-IN">Hindi</option>
+                    <option value="mr-IN">Marathi</option>
+                    <option value="ml-IN">Malayalam</option>
+                    <option value="fr-FR">French</option>
+                    <option value="es-ES">Spanish</option>
+                    <option value="gu-IN">Gujarati</option>
+                    <option value="te-IN">Telugu</option>
+                    <option value="ta-IN">Tamil</option>
+                    <option value="ko-KR">Korean</option>
+                    <option value="ja-JP">Japanese</option>
+                </select>
+                <i class="fas fa-exchange-alt swap-btn" onclick="swapLangs()"></i>
+                <select id="langTo">
+                    <option value="mr-IN">Marathi</option>
+                    <option value="en-US">English</option>
+                    <option value="hi-IN">Hindi</option>
+                    <option value="ml-IN">Malayalam</option>
+                    <option value="fr-FR">French</option>
+                    <option value="es-ES">Spanish</option>
+                    <option value="gu-IN">Gujarati</option>
+                    <option value="te-IN">Telugu</option>
+                    <option value="ta-IN">Tamil</option>
+                    <option value="ko-KR">Korean</option>
+                    <option value="ja-JP">Japanese</option>
+                </select>
+            </div>
+
+            <div class="text-wrap">
+                <textarea id="inputText" placeholder="Type your message..."></textarea>
+                <div class="box-footer">
+                    <i class="fas fa-volume-up" onclick="speakNow('input')"></i>
+                    <span class="label-text">INPUT</span>
+                </div>
+            </div>
+
+            <div class="text-wrap">
+                <textarea id="outputText" readonly placeholder="Translated text will appear here..."></textarea>
+                <div class="box-footer">
+                    <i class="fas fa-volume-up" onclick="speakNow('output')"></i>
+                    <i class="fas fa-copy" onclick="copyText()"></i>
+                    <span class="label-text">RESULT</span>
+                </div>
+            </div>
+
+            <button class="action-button" onclick="translateProcess()">TRANSLATE</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
